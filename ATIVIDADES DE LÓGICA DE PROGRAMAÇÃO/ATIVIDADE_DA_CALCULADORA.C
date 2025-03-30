@@ -8,7 +8,7 @@ setlocale(LC_ALL, "Portuguese_Brazil");
     SetConsoleOutputCP(1252); // Define a página de código para saída
 
     char op;
-    float N1, N2;
+    float N1, N2, resultado;
 
     printf("Informe dois valores: ");
     scanf("%f %f", &N1, &N2);
@@ -17,14 +17,25 @@ setlocale(LC_ALL, "Portuguese_Brazil");
     scanf(" %c", &op);
 
     if (op == '+') {
-        printf("A soma de %.2f + %.2f = %.2f\n", N1, N2, N1 + N2);
+        resultado = N1 + N2;
+        printf("A soma de %.2f + %.2f = %.2f\n", N1, N2, resultado);
     } else if (op == '-') {
-        printf("A subtracao de %.2f - %.2f = %.2f\n", N1, N2, N1 - N2);
+        resultado = N1 - N2;
+        printf("A subtracao de %.2f - %.2f = %.2f\n", N1, N2, resultado);
     } else if (op == 'x') {
-        printf("A multiplicacao de %.2f * %.2f = %.2f\n", N1, N2, N1 * N2);
-    } else {
-        printf("A divisao de %.2f / %.2f = %.2f\n", N1, N2, N1 / N2);
+        resultado = N1 * N2;
+        printf("A multiplicacao de %.2f * %.2f = %.2f\n", N1, N2, resultado);
+    } else if (op == '/') {
+        if (N2 != 0) {
+        resultado = N1 / N2;
+        printf("A divisao de %.2f / %.2f = %.2f\n", N1, N2, resultado);
+        } else {
+        printf("\nnão é possível fazer divisão por zero, favor digitar outro número !\n");
+        } 
+    }else {
+        printf("\nOperação Invalida. Tente novamente.\n");
     }
+
 
     printf("\n Parabéns pelo seu resultado !\n\n");
 
