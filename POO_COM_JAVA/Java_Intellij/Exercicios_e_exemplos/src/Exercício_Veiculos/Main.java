@@ -32,4 +32,16 @@
 //        System.out.printf("Saldo final: R$ %.2f%n", conta.getSaldo());
 //}
 //}
+public class Main {
+
+    public static void main(String[] args) {
+        // Instanciando um instrumento:
+        Instrumento instrumento1 = new Instrumento("Violão Giannini", 2008, "Cordas");
+        instrumento1.tocar(); // Saída esperada: Tocando o instrumento: Violão Giannini (Cordas), fabricado em 2008.
+
+        // Instanciando o saxofone:
+        Saxofone sax = new Saxofone("Sax Tenor Selmer", 2012, "Sopro", "Si bemol");
+        sax.tocar(); // Saída esperada: 🎷 Tocando o saxofone
+    }
+}
 
