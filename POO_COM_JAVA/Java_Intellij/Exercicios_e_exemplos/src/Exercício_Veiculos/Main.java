@@ -174,30 +174,60 @@
 //
 //Essas funções tornam o código mais simples e eficiente para contar vogais em qualquer texto.
 
+//-------------------------Contagem de vogais-----------------------
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args){
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("\n=== EXERCÍCIO 4 - CONTAGEM DE VOGAIS ===");
+//        System.out.print("Digite uma palavra ou frase: ");
+//        String texto = scanner.nextLine().toLowerCase();
+//
+//        int vogais = 0;
+//
+//        for (int i = 0; i < texto.length(); i++) {
+//            char letra = texto.charAt(i);
+//
+//            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+//                vogais++;
+//            }
+//        }
+//
+//        System.out.println("Número de vogais encontradas: " + vogais);
+//    }
+//}
+
+
+// ------------------Jogo de Adivinhação-------------------------
+//OBS: Opção mais usada e mais comum(outras formas no Drive), menos código e mais funcional:
 import java.util.Scanner;
+import java.util.Random;  // ← Import necessário
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int numeroSecreto = random.nextInt(50) + 1;
+        int tentativas = 0;
 
-        System.out.println("\n=== EXERCÍCIO 4 - CONTAGEM DE VOGAIS ===");
-        System.out.print("Digite uma palavra ou frase: ");
-        String texto = scanner.nextLine().toLowerCase();
+        while (true) { // Loop infinito com while
+            System.out.print("Digite seu palpite: ");
+            int palpite = scanner.nextInt();
+            tentativas++;
 
-        int vogais = 0;
-
-        for (int i = 0; i < texto.length(); i++) {
-            char letra = texto.charAt(i);
-
-            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
-                vogais++;
+            if (palpite == numeroSecreto) {
+                System.out.println("🎉 Parabéns! Você acertou!");
+                System.out.println("O número era: " + numeroSecreto);
+                System.out.println("Número de tentativas: " + tentativas);
+                break;
+            } else if (palpite < numeroSecreto) {
+                System.out.println("📈 O número é MAIOR que " + palpite + ". Tente novamente!");
+            } else {
+                System.out.println("📉 O número é MENOR que " + palpite + ". Tente novamente!");
             }
         }
-
-        System.out.println("Número de vogais encontradas: " + vogais);
     }
 }
-
-
-
 
