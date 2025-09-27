@@ -32,6 +32,8 @@
 //        System.out.printf("Saldo final: R$ %.2f%n", conta.getSaldo());
 //}
 //}
+
+//--------------------------------Main Instrumentos--------------------------------
 //public class Main {
 //
 //    public static void main(String[] args) {
@@ -45,33 +47,55 @@
 //    }
 //}
 
+//-----------------------------------Números Ímpares e Pares--------------------------------------------
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        int pares = 0;      // Contador de números pares
+//        int impares = 0;    // Contador de números ímpares
+//
+//        System.out.println("=== EXERCÍCIO 1 - NÚMEROS PARES E ÍMPARES ===");
+//        System.out.println("Digite 10 números inteiros:");
+//
+//        for (int i = 1; i <= 10; i++) {
+//            System.out.print("Número " + i + ": ");
+//            int numero = scanner.nextInt();  // Lê o número digitado
+//
+//            if (numero % 2 == 0) {
+//                pares++;        // Conta os pares
+//            } else {
+//                impares++;      // Conta os ímpares
+//            }
+//        }
+//
+//        System.out.println("\n--- RESULTADO ---");
+//        System.out.println("Números pares: " + pares);
+//        System.out.println("Números ímpares: " + impares);
+//
+//        scanner.close();
+//    }
+//}
+
+
+
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int pares = 0;      // Contador de números pares
-        int impares = 0;    // Contador de números ímpares
 
-        System.out.println("=== EXERCÍCIO 1 - NÚMEROS PARES E ÍMPARES ===");
-        System.out.println("Digite 10 números inteiros:");
+        System.out.println("\n=== EXERCÍCIO 2 - TABUADA PERSONALIZADA ===");
+        System.out.print("Digite um número para ver sua tabuada: ");
+        int numeroEscolhido = scanner.nextInt();
 
+        System.out.println("\nTabuada do " + numeroEscolhido + ":");
         for (int i = 1; i <= 10; i++) {
-            System.out.print("Número " + i + ": ");
-            int numero = scanner.nextInt();  // Lê o número digitado
-
-            if (numero % 2 == 0) {
-                pares++;        // Conta os pares
-            } else {
-                impares++;      // Conta os ímpares
-            }
+            int resultado = numeroEscolhido * i;
+            System.out.println(numeroEscolhido + " x " + i + " = " + resultado);
         }
-
-        System.out.println("\n--- RESULTADO ---");
-        System.out.println("Números pares: " + pares);
-        System.out.println("Números ímpares: " + impares);
-
-        scanner.close();
     }
+
 }
