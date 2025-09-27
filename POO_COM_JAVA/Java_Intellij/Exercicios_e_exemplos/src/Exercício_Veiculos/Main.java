@@ -32,16 +32,46 @@
 //        System.out.printf("Saldo final: R$ %.2f%n", conta.getSaldo());
 //}
 //}
+//public class Main {
+//
+//    public static void main(String[] args) {
+//        // Instanciando um instrumento:
+//        Instrumento instrumento1 = new Instrumento("Violão Giannini", 2008, "Cordas");
+//        instrumento1.tocar(); // Saída esperada: Tocando o instrumento: Violão Giannini (Cordas), fabricado em 2008.
+//
+//        // Instanciando o saxofone:
+//        Saxofone sax = new Saxofone("Sax Tenor Selmer", 2012, "Sopro", "Si bemol");
+//        sax.tocar(); // Saída esperada: 🎷 Tocando o saxofone
+//    }
+//}
+
+
+import java.util.Scanner;
+
 public class Main {
-
     public static void main(String[] args) {
-        // Instanciando um instrumento:
-        Instrumento instrumento1 = new Instrumento("Violão Giannini", 2008, "Cordas");
-        instrumento1.tocar(); // Saída esperada: Tocando o instrumento: Violão Giannini (Cordas), fabricado em 2008.
+        Scanner scanner = new Scanner(System.in);
+        int pares = 0;      // Contador de números pares
+        int impares = 0;    // Contador de números ímpares
 
-        // Instanciando o saxofone:
-        Saxofone sax = new Saxofone("Sax Tenor Selmer", 2012, "Sopro", "Si bemol");
-        sax.tocar(); // Saída esperada: 🎷 Tocando o saxofone
+        System.out.println("=== EXERCÍCIO 1 - NÚMEROS PARES E ÍMPARES ===");
+        System.out.println("Digite 10 números inteiros:");
+
+        for (int i = 1; i <= 10; i++) {
+            System.out.print("Número " + i + ": ");
+            int numero = scanner.nextInt();  // Lê o número digitado
+
+            if (numero % 2 == 0) {
+                pares++;        // Conta os pares
+            } else {
+                impares++;      // Conta os ímpares
+            }
+        }
+
+        System.out.println("\n--- RESULTADO ---");
+        System.out.println("Números pares: " + pares);
+        System.out.println("Números ímpares: " + impares);
+
+        scanner.close();
     }
 }
-
