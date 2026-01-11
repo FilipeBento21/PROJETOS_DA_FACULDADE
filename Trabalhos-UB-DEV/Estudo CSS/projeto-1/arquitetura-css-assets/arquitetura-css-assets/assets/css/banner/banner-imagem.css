@@ -1,5 +1,12 @@
 .banner-imagem {
+    background: url('../../img/banner.jpg') no-repeat center / cover;
     width: 100%;
     height: calc(100vh - 72px);
+
+    /*  Simplificando todo esse código de background pelo definido acima na classe:
+    background-image: url(../../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
 }
 
